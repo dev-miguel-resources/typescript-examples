@@ -1,5 +1,5 @@
 // Ejemplos de las bases de TS
-class Medic {
+/*class Medic {
     // atributos
     name: string
     lastname!: string // obligatorio pasar el valor del tipo correspodiente de forma requerida
@@ -9,12 +9,12 @@ class Medic {
 
     // forma 1
     // name: "Gabriel", lastname: "Amaru", codMed: 12
-    constructor(name: string, lastname: string, codMed: number) { 
+    /*constructor(name: string, lastname: string, codMed: number) { 
         this.name = name
         this.lastname = lastname
         this.codMed = codMed
         //this.fullname = `${this.name} ${this.lastname}`
-    }
+    }*/
 
     // forma 2
     /*constructor(public name: string, public lastname: string, public codMed: number) {
@@ -43,11 +43,30 @@ class Medic {
         this.name = "Gabriel"
         this.lastname = "Amaru"
         this.codMed = 15
-    }*/
+    }
+ 
+}*/
 
-    
+// Interface
+// forma 4
+interface Medic {
+    name: string
+    lastname: string
+    codMed: number
 }
 
-const medic: Medic = new Medic("Yorman", "Amaro", 12)
+class Medic {
+    name: string
+    lastname: string
+    codMed: number
+
+    constructor({ name, lastname, codMed }: Medic) {
+        this.name = name
+        this.lastname = lastname
+        this.codMed = codMed
+    }
+}
+
+const medic: Medic = new Medic({ lastname: "Villagran", name: "Jaime", codMed: 12 })
 console.log(medic)
 //console.log(medic.name)
